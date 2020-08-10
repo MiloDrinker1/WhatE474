@@ -1,0 +1,374 @@
+###############################################################################
+#
+# IAR ELF Linker V8.11.3.13950/W32 for ARM                10/Aug/2020  14:58:13
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Exe\freertos_demo.out
+#    Map file     =  
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\List\freertos_demo.map
+#    Command line =  
+#        -f C:\Users\VEENOU~1\AppData\Local\Temp\EWF8AE.tmp
+#        (C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\buttons.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\heap_2.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\Lab_3_Driver.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\led_task.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\list.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\main.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\port.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\portasm.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\queue.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\rgb.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\SSD2119_Display.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\SSD2119_Touch.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\startup_ewarm.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\switch_task.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\tasks.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\uartstdio.o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj\ustdlib.o
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmallNoMb -o
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Exe\freertos_demo.out
+#        --map
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\List\freertos_demo.map
+#        --config
+#        C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\freertos_demo.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Lt009]: Inconsistent wchar_t size
+            sysctl.o(driverlib.a) and 2 other objects have wchar_t size 16 bits
+            buttons.o and 31 other objects have wchar_t size 32 bits
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at start of [0x00000000-0x0003ffff] { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+define block HEAP with size = 0M, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block HEAP };
+do not initialize { section .noinit };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                      0x26c
+  .intvec            const    0x00000000   0x26c  startup_ewarm.o [1]
+                            - 0x0000026c   0x26c
+
+"P1":                                     0x17b6
+  .text              ro code  0x0000026c   0x624  SSD2119_Display.o [1]
+  .text              ro code  0x00000890   0x4cc  tasks.o [1]
+  .text              ro code  0x00000d5c    0xdc  port.o [1]
+  .text              ro code  0x00000e38    0x8e  list.o [1]
+  .text              ro code  0x00000ec6    0x7a  lz77_init_single.o [6]
+  .text              ro code  0x00000f40   0x328  main.o [1]
+  .text              ro code  0x00001268    0xe4  heap_2.o [1]
+  .text              ro code  0x0000134c    0x3a  ABImemset48.o [6]
+  CODE               ro code  0x00001388    0xa8  portasm.o [1]
+  .text              ro code  0x00001430   0x284  SSD2119_Touch.o [1]
+  .text              ro code  0x000016b4    0xf8  Lab_3_Driver.o [1]
+  .text              ro code  0x000017ac    0x40  zero_init3.o [6]
+  .text              ro code  0x000017ec    0x28  data_init.o [6]
+  .text              ro code  0x00001814    0x22  fpinit_M.o [5]
+  .iar.init_table    const    0x00001838    0x20  - Linker created -
+  .text              ro code  0x00001858    0x1a  startup_ewarm.o [1]
+  .text              ro code  0x00001872     0xc  cstartup_M.o [6]
+  .text              ro code  0x00001880    0x1a  cmain.o [6]
+  .text              ro code  0x0000189a     0x4  low_level_init.o [3]
+  .text              ro code  0x0000189e     0x4  exit.o [3]
+  .text              ro code  0x000018a4     0xa  cexit.o [6]
+  .text              ro code  0x000018b0    0x14  exit.o [7]
+  .rodata            const    0x000018c4     0x0  zero_init3.o [6]
+  .rodata            const    0x000018c4     0x0  lz77_init_single.o [6]
+  Initializer bytes  const    0x000018c4   0x15e  <for P2-1>
+                            - 0x00001a22  0x17b6
+
+"P2", part 1 of 3:                        0x756d
+  P2-1                        0x20000000  0x756d  <Init block>
+    .data            inited   0x20000000  0x7548  heap_2.o [1]
+    .data            inited   0x20007548    0x20  main.o [1]
+    .data            inited   0x20007568     0x4  port.o [1]
+    .data            inited   0x2000756c     0x1  main.o [1]
+                            - 0x2000756d  0x756d
+
+"P2", part 2 of 3:                         0x1ec
+  .bss               zero     0x20007570   0x140  tasks.o [1]
+  .bss               zero     0x200076b0    0x9c  tasks.o [1]
+  .bss               zero     0x2000774c     0x8  main.o [1]
+  .bss               zero     0x20007754     0x6  SSD2119_Display.o [1]
+                            - 0x2000775a   0x1ea
+
+"P2", part 3 of 3:                         0x200
+  .noinit            uninit   0x2000775c   0x200  startup_ewarm.o [1]
+                            - 0x2000795c   0x200
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1ea:
+          0x20007570   0x1ea
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x15e (1% of destination):
+          0x000018c4   0x15e
+    1 destination range, total size 0x756d:
+          0x20000000  0x756d
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  ro data  rw data
+    ------              -------  -------  -------
+C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj: [1]
+    Lab_3_Driver.o          248
+    SSD2119_Display.o     1 572                 6
+    SSD2119_Touch.o         644
+    heap_2.o                228      349   30 024
+    list.o                  142
+    main.o                  808        1       41
+    port.o                  220                 4
+    portasm.o               168
+    startup_ewarm.o          26      620      512
+    tasks.o               1 228               476
+    ---------------------------------------------
+    Total:                5 284      970   31 063
+
+command line: [2]
+    ---------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                    4
+    low_level_init.o          4
+    ---------------------------------------------
+    Total:                    8
+
+driverlib.a: [4]
+    ---------------------------------------------
+    Total:
+
+m7M_tls.a: [5]
+    fpinit_M.o               34
+    ---------------------------------------------
+    Total:                   34
+
+rt7M_tl.a: [6]
+    ABImemset48.o            58
+    cexit.o                  10
+    cmain.o                  26
+    cstartup_M.o             12
+    data_init.o              40
+    lz77_init_single.o      122
+    zero_init3.o             64
+    ---------------------------------------------
+    Total:                  332
+
+shb_l.a: [7]
+    exit.o                   20
+    ---------------------------------------------
+    Total:                   20
+
+    Gaps                      8        2
+    Linker created                    32
+-------------------------------------------------
+    Grand Total:          5 686    1 004   31 063
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.iar.init_table$$Base   0x00001838           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001858           --   Gb  - Linker created -
+?main                   0x00001881          Code  Gb  cmain.o [6]
+ADC_Read                0x000014d5    0x1a  Code  Lc  SSD2119_Touch.o [1]
+ADC_SetChannel          0x000014ef    0x26  Code  Lc  SSD2119_Touch.o [1]
+Color4                  0x00000870    0x20  Data  Gb  SSD2119_Display.o [1]
+Control                 0x00001125    0x6c  Code  Gb  main.o [1]
+Control::prev_light_tick_time
+                        0x20007564     0x4  Data  Lc  main.o [1]
+FSM                     0x00001191    0x54  Code  Gb  main.o [1]
+FaultISR                0x0000186f     0x2  Code  Lc  startup_ewarm.o [1]
+GreenLED_InitOrOff      0x00000f93    0x12  Code  Gb  main.o [1]
+GreenLED_On             0x00000fc5    0x12  Code  Gb  main.o [1]
+IntDefaultHandler       0x00001871     0x2  Code  Lc  startup_ewarm.o [1]
+LCD_DrawCircle          0x000006a3    0xf6  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawFilledCircle    0x000007a9    0xbe  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawPixel           0x00000669    0x28  Code  Gb  SSD2119_Display.o [1]
+LCD_Init                0x0000038b   0x26e  Code  Gb  SSD2119_Display.o [1]
+LCD_SetTextColor        0x0000060d     0xc  Code  Gb  SSD2119_Display.o [1]
+LCD_WriteCommand        0x0000026d    0x58  Code  Lc  SSD2119_Display.o [1]
+LCD_WriteData           0x000002c5    0x5e  Code  Lc  SSD2119_Display.o [1]
+NmiSR                   0x0000186d     0x2  Code  Lc  startup_ewarm.o [1]
+PED_Pressed             0x00001001    0x2a  Code  Gb  main.o [1]
+PLL_Init                0x000016b5    0xf8  Code  Gb  Lab_3_Driver.o [1]
+Pedestrian              0x000010e9    0x3c  Code  Gb  main.o [1]
+Pedestrian::curr_ped_tick_time
+                        0x2000755c     0x4  Data  Lc  main.o [1]
+Pedestrian::prev_ped_tick_time
+                        0x20007560     0x4  Data  Lc  main.o [1]
+RedLED_InitOrOff        0x00000f73    0x10  Code  Gb  main.o [1]
+RedLED_On               0x00000fa5    0x10  Code  Gb  main.o [1]
+Region$$Table$$Base     0x00001838           --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001858           --   Gb  - Linker created -
+ResetISR                0x00001859     0xe  Code  Gb  startup_ewarm.o [1]
+SW_Pressed              0x00000fd7    0x2a  Code  Gb  main.o [1]
+StartStop               0x000010b1    0x38  Code  Gb  main.o [1]
+StartStop::curr_onoff_tick_time
+                        0x20007554     0x4  Data  Lc  main.o [1]
+StartStop::prev_onoff_tick_time
+                        0x20007558     0x4  Data  Lc  main.o [1]
+TL_State                0x20007548     0x1  Data  Gb  main.o [1]
+Touch_Init              0x00001431    0xa4  Code  Gb  SSD2119_Touch.o [1]
+Touch_ReadX             0x000015bf    0xa8  Code  Gb  SSD2119_Touch.o [1]
+Touch_ReadY             0x00001515    0xaa  Code  Gb  SSD2119_Touch.o [1]
+VirtualTF_Init          0x00000f41    0x32  Code  Gb  main.o [1]
+YellowLED_InitOrOff     0x00000f83    0x10  Code  Gb  main.o [1]
+YellowLED_On            0x00000fb5    0x10  Code  Gb  main.o [1]
+__aeabi_memset4         0x0000134d          Code  Gb  ABImemset48.o [6]
+__aeabi_memset8         0x0000134d          Code  Gb  ABImemset48.o [6]
+__cmain                 0x00001881          Code  Gb  cmain.o [6]
+__exit                  0x000018b1    0x14  Code  Gb  exit.o [7]
+__iar_Memset4_word      0x00001355          Code  Gb  ABImemset48.o [6]
+__iar_Memset8_word      0x00001355          Code  Gb  ABImemset48.o [6]
+__iar_data_init3        0x000017ed    0x28  Code  Gb  data_init.o [6]
+__iar_init_vfp          0x00001815          Code  Gb  fpinit_M.o [5]
+__iar_lz77_init_single3
+                        0x00000ec7    0x7a  Code  Gb  lz77_init_single.o [6]
+__iar_program_start     0x00001873          Code  Gb  cstartup_M.o [6]
+__iar_systems$$module {Abs}
+                        0x00000001          Data  Gb  command line/config [2]
+__iar_zero_init3        0x000017ad    0x40  Code  Gb  zero_init3.o [6]
+__low_level_init        0x0000189b     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000   0x26c  Data  Gb  startup_ewarm.o [1]
+_call_main              0x0000188d          Code  Gb  cmain.o [6]
+_exit                   0x000018a5          Code  Gb  cexit.o [6]
+_main                   0x00001897          Code  Gb  cmain.o [6]
+convertColor            0x000005fd    0x10  Code  Gb  SSD2119_Display.o [1]
+cursorX                 0x20007754     0x2  Data  Gb  SSD2119_Display.o [1]
+cursorY                 0x20007756     0x2  Data  Gb  SSD2119_Display.o [1]
+exit                    0x0000189f     0x4  Code  Gb  exit.o [3]
+freq                    0x2000756c     0x1  Data  Gb  main.o [1]
+main                    0x0000103d    0x72  Code  Gb  main.o [1]
+onoff_status            0x20007550     0x4  Data  Gb  main.o [1]
+pedestrian_status       0x2000754c     0x4  Data  Gb  main.o [1]
+prvAddCurrentTaskToDelayedList
+                        0x00000cb7    0x32  Code  Lc  tasks.o [1]
+prvAllocateTCBAndStack  0x00000ce9    0x3a  Code  Lc  tasks.o [1]
+prvIdleTask             0x00000c15    0x4c  Code  Lc  tasks.o [1]
+prvInitialiseTCBVariables
+                        0x00000c67    0x50  Code  Lc  tasks.o [1]
+prvResetNextTaskUnblockTime
+                        0x00000d23    0x1c  Code  Lc  tasks.o [1]
+prvTaskExitError        0x00000d81    0x10  Code  Lc  port.o [1]
+pui32Stack              0x2000775c   0x200  Data  Lc  startup_ewarm.o [1]
+pvPortMalloc            0x00001269    0xaa  Code  Gb  heap_2.o [1]
+pvPortMalloc::xHeapHasBeenInitialised
+                        0x20000014     0x4  Data  Lc  heap_2.o [1]
+pxCurrentTCB            0x200076d8     0x4  Data  Gb  tasks.o [1]
+pxDelayedTaskList       0x200076dc     0x4  Data  Lc  tasks.o [1]
+pxOverflowDelayedTaskList
+                        0x200076e0     0x4  Data  Lc  tasks.o [1]
+pxPortInitialiseStack   0x00000d5d    0x22  Code  Gb  port.o [1]
+pxReadyTasksLists       0x20007570   0x140  Data  Lc  tasks.o [1]
+textColor               0x20007758     0x2  Data  Gb  SSD2119_Display.o [1]
+ucHeap                  0x20000018  0x7530  Data  Lc  heap_2.o [1]
+uxCriticalNesting       0x20007568     0x4  Data  Lc  port.o [1]
+uxCurrentNumberOfTasks  0x200076fc     0x4  Data  Lc  tasks.o [1]
+uxListRemove            0x00000ea3    0x24  Code  Gb  list.o [1]
+uxPendedTicks           0x2000770c     0x4  Data  Lc  tasks.o [1]
+uxSchedulerSuspended    0x20007720     0x4  Data  Lc  tasks.o [1]
+uxTaskNumber            0x20007718     0x4  Data  Lc  tasks.o [1]
+uxTasksDeleted          0x200076e4     0x4  Data  Lc  tasks.o [1]
+uxTopReadyPriority      0x20007704     0x4  Data  Lc  tasks.o [1]
+vApplicationStackOverflowHook
+                        0x0000103b     0x2  Code  Gb  main.o [1]
+vListInitialise         0x00000e39    0x1a  Code  Gb  list.o [1]
+vListInitialiseItem     0x00000e53     0x6  Code  Gb  list.o [1]
+vListInsert             0x00000e71    0x32  Code  Gb  list.o [1]
+vListInsertEnd          0x00000e59    0x18  Code  Gb  list.o [1]
+vPortEnableVFP          0x00001415          Code  Gb  portasm.o [1]
+vPortEnterCritical      0x00000dc5    0x18  Code  Gb  port.o [1]
+vPortExitCritical       0x00000ddd    0x10  Code  Gb  port.o [1]
+vPortFree               0x00001313    0x36  Code  Gb  heap_2.o [1]
+vPortSVCHandler         0x000013e1          Code  Gb  portasm.o [1]
+vPortStartFirstTask     0x000013fd          Code  Gb  portasm.o [1]
+vTaskDelay              0x0000098f    0x34  Code  Gb  tasks.o [1]
+vTaskStartScheduler     0x000009d7    0x4c  Code  Gb  tasks.o [1]
+vTaskSuspendAll         0x00000a23     0xc  Code  Gb  tasks.o [1]
+vTaskSwitchContext      0x00000b91    0x72  Code  Gb  tasks.o [1]
+x                       0x2000774c     0x4  Data  Gb  main.o [1]
+xDelayedTaskList1       0x20007724    0x14  Data  Lc  tasks.o [1]
+xDelayedTaskList2       0x20007738    0x14  Data  Lc  tasks.o [1]
+xEnd                    0x20000008     0x8  Data  Lc  heap_2.o [1]
+xFreeBytesRemaining     0x20000010     0x4  Data  Lc  heap_2.o [1]
+xNextTaskUnblockTime    0x2000771c     0x4  Data  Lc  tasks.o [1]
+xNumOfOverflows         0x20007714     0x4  Data  Lc  tasks.o [1]
+xPendingReadyList       0x200076b0    0x14  Data  Lc  tasks.o [1]
+xPortPendSVHandler      0x00001389          Code  Gb  portasm.o [1]
+xPortStartScheduler     0x00000d91    0x34  Code  Gb  port.o [1]
+xPortSysTickHandler     0x00000ded    0x26  Code  Gb  port.o [1]
+xSchedulerRunning       0x20007708     0x4  Data  Lc  tasks.o [1]
+xStart                  0x20000000     0x8  Data  Lc  heap_2.o [1]
+xSuspendedTaskList      0x200076e8    0x14  Data  Lc  tasks.o [1]
+xTaskGenericCreate      0x00000891    0xfe  Code  Gb  tasks.o [1]
+xTaskGetTickCount       0x00000ad1     0x2  Code  Gb  tasks.o [1]
+xTaskIncrementTick      0x00000adb    0xb0  Code  Gb  tasks.o [1]
+xTaskResumeAll          0x00000a2f    0x98  Code  Gb  tasks.o [1]
+xTasksWaitingTermination
+                        0x200076c4    0x14  Data  Lc  tasks.o [1]
+xTickCount              0x20007700     0x4  Data  Lc  tasks.o [1]
+xYieldPending           0x20007710     0x4  Data  Lc  tasks.o [1]
+y                       0x20007750     0x4  Data  Gb  main.o [1]
+
+
+[1] = C:\ti\TivaWare_C_Series-2.1.4.178\examples\boards\ek-tm4c123gxl\freertos_demo\ewarm\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = driverlib.a
+[5] = m7M_tls.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+   5 686 bytes of readonly  code memory
+   1 004 bytes of readonly  data memory
+  31 063 bytes of readwrite data memory
+
+Errors: none
+Warnings: 1
